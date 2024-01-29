@@ -5,6 +5,6 @@ from django.shortcuts import render
 # home page
 def index(request):
     return render(request , 'core/index.html')
-
+# contact page
 def contact(request):
     return render(request , 'core/contact.html')
