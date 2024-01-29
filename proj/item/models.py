@@ -20,7 +20,7 @@ class Item(models.Model):
     is_sold= models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     created_by = models.ForeignKey(User , related_name="items",on_delete=models.CASCADE)
-    image=models.ImageField(upload_to='item_iamges',blank=True,null=True)
+    image=models.ImageField(upload_to='item_iamges/',blank=True,null=True)
 
      #describing the category
   
