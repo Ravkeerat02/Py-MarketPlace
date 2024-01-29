@@ -4,7 +4,7 @@
 
 [Marketplace](https://youtu.be/ZxMB6Njs3ck?si=h1pDeAIJHdF5swUu)
 
-## Languaage and Framework 
+## Languaage and Framework
 
 - Python
 - Django
@@ -28,18 +28,17 @@ Use the following credentials for testing:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/online-marketplace.git
-   cd online-marketplace
+   git clone https://github.com/Ravkeerat02/Py-MarketPlace.git
    ```
 
 2. Run migrations:
 
-  ```bash
-  python manage.py migrate
-  ```
+```bash
+python manage.py migrate
+```
 
 3.Start the development server:
 
-  ```bash
-  python manage.py runserver
-  ```
+```bash
+python manage.py runserver
+```
