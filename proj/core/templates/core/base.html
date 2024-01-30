@@ -15,18 +15,33 @@
       <div class="space-x-6">
         <a href="#" class="text-lg font-bold hover:text-gray-500">New item</a>
         <a href="#" class="text-lg font-bold hover:text-gray-500">Browse</a>
+        <a
+          href="#"
+          class="px-6 py-3 text-lg font-bold bg-teal-500 text-white rounded-xl hover:bg-teal-600"
+          >Inbox
+        </a>
+
+        <!-- log in -->
+        <a
+          href="#"
+          class="px-6 py-3 text-lg font-bold bg-gray-500 text-white rounded-xl hover:bg-gray-600"
+          >Dashboard
+        </a>
+        {% if request.user.is_authenticated%} {% else%}
         <!-- sign up -->
         <a
           href="{% url 'core:signup'%}"
           class="px-6 py-3 text-lg font-bold bg-teal-500 text-white rounded-xl hover:bg-teal-600"
           >Sign Up
         </a>
+
         <!-- log in -->
         <a
-          href="#"
+          href="{% url 'core:login'%}"
           class="px-6 py-3 text-lg font-bold bg-gray-500 text-white rounded-xl hover:bg-gray-600"
           >Login
         </a>
+        {% endif%}
       </div>
     </nav>
     <div class="px-6 py-6">{% block content %}{% endblock %}</div>
