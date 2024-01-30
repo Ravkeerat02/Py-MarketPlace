@@ -1,6 +1,8 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
+from django.contrib.auth.decorators import login_required
 from .models import Item
-# Create your views here.
+from .forms import NewItemForm
+
 
 def detail(request,pk):
     item = get_object_or_404(Item,pk=pk)
@@ -9,4 +11,23 @@ def detail(request,pk):
     return render(request, 'item/detail.html',{
         'item':item,
         'related_items':related_items,
+    })
+    # redirected to login page
+@login_required
+def new(request):
+    if request.method == 'POST':
+        form = NewItemForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            item = form.save(commit=False)
+            item.created_by = request.user
+            item.save()
+
+            return redirect('item:detail', pk=item.id)
+    else:
+        form = NewItemForm()
+
+    return render(request, 'item/form.html', {
+        'form': form,
+        'title': 'New item',
     })
