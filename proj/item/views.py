@@ -12,9 +12,12 @@ def detail(request,pk):
         'item':item,
         'related_items':related_items,
     })
-    # redirected to login page
+    
+
+# redirected to login page
 @login_required
 def new(request):
+    # checking if form is submitted
     if request.method == 'POST':
         form = NewItemForm(request.POST, request.FILES)
 
