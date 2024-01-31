@@ -9,8 +9,8 @@ urlpatterns = [
     path('new/', views.new, name='new'),
     # delete
     path('<int:pk>/delete/', views.delete, name='delete'),
-    # # update
-    # path('update/<int:pk>/', views.update, name='update'),
+    # update
+    path('<int:pk>/edit', views.edit, name='edit'),
     # # list
     # path('', views.list, name='list'),
     
