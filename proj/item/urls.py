@@ -4,9 +4,10 @@ from . import views
 app_name = 'item'
 
 urlpatterns = [
-   
-    path('<int:pk>/', views.detail, name='detail'),
+    #    home
+    path('', views.items, name='items'),
     path('new/', views.new, name='new'),
+    path('<int:pk>/', views.detail, name='detail'),
     # delete
     path('<int:pk>/delete/', views.delete, name='delete'),
     # update

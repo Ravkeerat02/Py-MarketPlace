@@ -22,6 +22,7 @@ Use the following credentials for testing:
 1. **Login**: Implement user authentication to allow users to log in.
 2. **Sign up**: Enable users to create new accounts and sign up for the marketplace.
 3. **Create Read Update Delete (CRUD) Item**: Implement CRUD operations for managing marketplace items.
+4. **Search**: Ability to search on the basis of categories or doing it manually
 
 ## Getting Started
 
