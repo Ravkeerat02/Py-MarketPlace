@@ -34,3 +34,11 @@ def new(request):
         'form': form,
         'title': 'New item',
     })
+    
+# delete
+@login_required
+def delete(request , pk):
+    item = get_object_or_404(Item, pk = pk,created_at = request.user)
+    item.delete()
+    return redirect('dashboard:index')
+

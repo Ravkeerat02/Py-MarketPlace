@@ -4,8 +4,15 @@ from . import views
 app_name = 'item'
 
 urlpatterns = [
-    # Other paths...
+   
     path('<int:pk>/', views.detail, name='detail'),
     path('new/', views.new, name='new'),
-    # Other paths...
+    # delete
+    path('<int:pk>/delete/', views.delete, name='delete'),
+    # # update
+    # path('update/<int:pk>/', views.update, name='update'),
+    # # list
+    # path('', views.list, name='list'),
+    
+ 
 ]
